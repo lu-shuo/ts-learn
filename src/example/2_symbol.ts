@@ -1,5 +1,8 @@
 // ES6中新增的基本类型
 // 标识独一无二的值
+
+import { collapseTextChangeRangesAcrossMultipleVersions } from 'typescript'
+
 // tsconfig中lib添加es6支持
 const s1 = Symbol()
 const s2 = Symbol()
@@ -17,6 +20,7 @@ const s4 = Symbol('lushuo')
 // Symbol可以转换成字符串，作布尔类型转换
 s3.toString() // Symbol(lushuo)
 Boolean(s3) // true
+// tslint:disable-next-line: no-unused-expression
 !s3 // false
 
 // 作属性名
@@ -77,4 +81,53 @@ let arr = [1, 2]
 arr[Symbol.isConcatSpreadable] = false
 console.log([].concat(arr, [3, 4]))
 
-// 3.Symbol
+// 3.Symbol.species 指定创建衍生对象的构造函数
+
+// 4.Symbol.match
+
+let obj3 = {
+  [Symbol.match](string) {
+    console.log(string.length)
+  },
+}
+
+'abcde'.match(<RegExp>obj3) // 5
+
+// 5.Symbol.replace
+
+// 6.Symbol.search
+
+// 7.Symbol.split
+
+// 8. Symbol.iterator
+const iterator = arr[Symbol.iterator]()
+console.log(iterator, iterator.next()) // {value: 1, done: false}
+
+// 9.Symbol.toPrimitive
+let obj4: unknown = {
+  [Symbol.toPrimitive](type) {
+    console.log(type)
+  },
+}
+
+// const res = (obj4 as number)++ // number
+const res = `abc${obj4}` // ts中：default，js中：string
+
+// 10. Symbol.toStringTag
+// 指定调用对象toString方法时调用的函数
+let obj5: unknown = {
+  [Symbol.toStringTag]: 'lushuo',
+}
+
+console.log(obj5.toString()) // [object lushuo]
+
+// 11.Symbol.unscopables
+// 指定在使用with操作对象时从对象上过滤掉的属性
+// const obj7 = {
+//   a: 'a',
+//   b: 'b',
+// }
+// with (obj7) {
+//   console.log(a)
+// }
+console.log(Array.prototype[Symbol.unscopables])
