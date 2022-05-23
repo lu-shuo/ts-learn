@@ -1,8 +1,6 @@
 // ES6中新增的基本类型
 // 标识独一无二的值
 
-import { collapseTextChangeRangesAcrossMultipleVersions } from 'typescript'
-
 // tsconfig中lib添加es6支持
 const s1 = Symbol()
 const s2 = Symbol()
@@ -66,20 +64,20 @@ Symbol.keyFor(s6) // lushuo
 // *11个内置的Symbol值
 // 1.Symbol.hasInstance
 // 当使用instanceof obj时就会调用通过Symbol.hasInstance作key的方法
-const obj1 = {
-  [Symbol.hasInstance](otherObj) {
-    console.log(otherObj)
-  },
-}
+// const obj1 = {
+//   [Symbol.hasInstance](otherObj) {
+//     console.log(otherObj)
+//   },
+// }
 
-console.log({ a: 'a' } instanceof <any>obj1)
+// console.log({ a: 'a' } instanceof <any>obj1)
 
 // 2.Symbol.isConcatSpreadable
 // 将数组的此属性设置为false，数组在concat中将不会被扁平化
 // 默认为undefined，和true的效果相同
-let arr = [1, 2]
-arr[Symbol.isConcatSpreadable] = false
-console.log([].concat(arr, [3, 4]))
+// let arr = [1, 2]
+// arr[Symbol.isConcatSpreadable] = false
+// console.log([].concat(arr, [3, 4]))
 
 // 3.Symbol.species 指定创建衍生对象的构造函数
 
