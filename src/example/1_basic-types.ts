@@ -3,7 +3,7 @@ import { isConstructorDeclaration } from 'typescript'
 // *布尔boolean
 let bool: boolean = true
 
-// 数值
+// *数值
 let num: number = 123
 num = 0b111 // 二进制
 num = 0o173 // 八进制
@@ -13,7 +13,7 @@ num = 0x7b // 十六进制
 let str: string = 'abc'
 str = `数值位：${num}`
 
-// 数组
+// *数组
 let arr1: number[] = [1, 2, 3]
 let arr2: Array<number> = [1, 2, 3]
 let arr3: (number | string)[] = ['1', 2, 3]
