@@ -3,4 +3,5 @@
 // import './example/3_interface'
 // import './example/4_function'
 // import './example/5_generics'
-import './example/6_classInEs6'
+// import './example/6_classInEs6'
+import './example/7_classInTs'
