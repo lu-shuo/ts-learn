@@ -7,7 +7,8 @@
     "interface-name": [true, "never-prefix"],
     "max-classes-per-file": [false],
     "variable-name": [false],
-    "no-empty-interface": [false]
+    "no-empty-interface": [false],
+    "no-empty": [false]
   },
   "rulesDirectory": []
 }
