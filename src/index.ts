@@ -6,4 +6,5 @@
 // import './example/6_classInEs6'
 // import './example/7_classInTs'
 // import './example/8_enum'
-import './example/9_inferenceAndCompatibility'
+// import './example/9_inferenceAndCompatibility'
+import './example/10_advanced-types'
