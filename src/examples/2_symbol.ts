@@ -113,7 +113,7 @@ const res = `abc${obj4}` // ts中：default，js中：string
 
 // 10. Symbol.toStringTag
 // 指定调用对象toString方法时调用的函数
-let obj5: unknown = {
+let obj5 = {
   [Symbol.toStringTag]: 'lushuo',
 }
 

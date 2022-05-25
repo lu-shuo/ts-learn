@@ -1,5 +1,3 @@
-import { isConstructorDeclaration } from 'typescript'
-
 // *布尔boolean
 let bool: boolean = true
 
@@ -39,6 +37,7 @@ enum Roles {
 console.log(Roles.ADIMN, Roles[0])
 
 // *any
+// 是任何类型的子类型
 // 编写代码时无法获取准确类型的情况
 // 不建议使用，万不得已的时候可以用
 let value: any
@@ -47,7 +46,7 @@ let value: any
 // 什么类型都不是，空
 // 函数没有返回值的情况，js中函数没有返回值返回undefined
 // void类型的值可以被赋给undefined或null
-const print = (str: string): void => {
+const printFunc = (str: string): void => {
   console.log(str)
 }
 
@@ -82,8 +81,8 @@ function consoleObject(obj: object) {
 // *类型断言
 // jsx中只能使用as
 const getLength = (target: string | number): number => {
-  if ((<string>target).length || (target as string).length === 0) {
-    return (<string>target).length
+  if ((target as string).length || (target as string).length === 0) {
+    return (target as string).length
   } else {
     return target.toString().length
   }
