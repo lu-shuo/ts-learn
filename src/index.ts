@@ -11,4 +11,5 @@
 // import './examples/11_advanced-types-2'
 // import './modules/a'
 // import './examples/12_merging'
-import './examples/13_decorators'
+// import './examples/13_decorators'
+import './examples/14_mixin'
