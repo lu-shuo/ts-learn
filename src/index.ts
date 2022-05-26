@@ -9,4 +9,5 @@
 // import './examples/9_inferenceAndCompatibility'
 // import './examples/10_advanced-types-1'
 // import './examples/11_advanced-types-2'
-import './modules/a'
+// import './modules/a'
+import './examples/12_merging'
