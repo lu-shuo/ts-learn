@@ -13,4 +13,6 @@
 // import './examples/12_merging'
 // import './examples/13_decorators'
 // import './examples/14_mixin'
-import './examples/15_update'
+// import './examples/15_update'
+import './examples/16_declaration-files'
+// import './examples/index.js'

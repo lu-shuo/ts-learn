@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const path = require('path')
 
 module.exports = {
@@ -29,6 +30,14 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'index.html',
       inject: true,
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, '../src/modules/global-lib.js'),
+          to: path.resolve(__dirname, '../dist'),
+        },
+      ],
     }),
   ],
   devtool: process.env.NODE_ENV === 'production' ? false : 'inline-source-map',
